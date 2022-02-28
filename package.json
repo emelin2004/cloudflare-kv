@@ -1,20 +1,13 @@
 {
   "name": "cloudflare-kv",
   "version": "2.0.3",
-  "main": "index.mjs",
+  "main": "index.js",
   "repository": "https://github.com/Zertz/cloudflare-kv",
   "author": "Pier-Luc Gendreau",
   "license": "MIT",
-  "scripts": {
-    "test": "ava --serial"
-  },
+  "scripts": {},
   "dependencies": {
     "got": "^12.0.1"
-  },
-  "devDependencies": {
-    "ava": "^4.0.1",
-    "dotenv-safe": "^8.2.0",
-    "prettier": "^2.4.1"
   },
   "files": []
 }
