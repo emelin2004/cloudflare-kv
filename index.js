@@ -1,6 +1,6 @@
-//Changed module type from mjs to cjs
+//Changed module type from mjs to cjs and use "axios" instead of "got"
 
-const got = require("got").default;
+const axios = require("axios").default;
 
 exports.default = class CloudflareKV {
   constructor({ accountId, apiToken, namespaceId } = {}) {
@@ -34,9 +34,9 @@ exports.default = class CloudflareKV {
     const url = this.getUrl(key);
     const headers = this.getHeaders();
 
-    await got.delete(url, {
-      headers,
-    });
+    await axios.delete(url, {
+      headers: headers
+    })
   }
 
   /**
@@ -48,12 +48,12 @@ exports.default = class CloudflareKV {
     const url = this.getUrl(key);
     const headers = this.getHeaders();
 
-    const response = await got.get(url, {
-      headers,
-      responseType: "json",
-    });
+    const response = await axios.get(url, {
+      headers: headers,
+      responseType: "json"
+    })
 
-    return response.body;
+    return response.data;
   }
 
   /**
@@ -65,9 +65,8 @@ exports.default = class CloudflareKV {
     const url = this.getUrl(key);
     const headers = this.getHeaders();
 
-    await got.put(url, {
-      headers,
-      json: value,
-    });
+    await axios.put(url, value, {
+      headers: headers,
+    })
   }
 }

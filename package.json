@@ -6,8 +6,8 @@
   "author": "Pier-Luc Gendreau",
   "license": "MIT",
   "scripts": {},
+  "files": [],
   "dependencies": {
-    "got": "^12.0.1"
-  },
-  "files": []
+    "axios": "^0.26.0"
+  }
 }
